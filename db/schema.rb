@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_10_08_032139) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "answers", force: :cascade do |t|
     t.string "correct_answer"
     t.integer "question_id"
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_10_08_032139) do
     t.string "category"
     t.string "license"
     t.string "field"
-    t.integer "exam_id", null: false
+    t.bigint "exam_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "selected_answer"
@@ -43,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_10_08_032139) do
   create_table "exams", force: :cascade do |t|
     t.string "license"
     t.string "field"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "grade"
