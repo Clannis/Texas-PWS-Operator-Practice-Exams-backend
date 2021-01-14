@@ -1,5 +1,6 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username
-
-  has_many :exams
-end
+    attributes :id, :username
+  
+    has_many :exams
+  end
+  
